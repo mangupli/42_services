@@ -10,8 +10,12 @@ define( 'DB_USER', 'admin' );
 /** MySQL database password */
 define( 'DB_PASSWORD', 'password' );
 
-/** MySQL hostname  ???? */
-define( 'DB_HOST', 'localhost' );
+/** MySQL hostname */
+define( 'DB_HOST', 'mysql-svc:3306' );
+
+define( 'WP_HOME', 'http://192.168.99.100:5050' );
+define( 'WP_SITEURL', 'http://192.168.99.100:5050');
+
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
@@ -29,9 +33,9 @@ define('LOGGED_IN_SALT',   '|L}6z++$@NV~6`[pWE,KH|Co9Ve/NxK?:t6|+N$Le{GwSTN8d&8G
 define('NONCE_SALT',       'e$x8mNi_:N&SSLAX+eby8j-jFj}bf][Q%Y(y60rsZ}he;qu#`>J$[396{IXX4n._');
 
 $table_prefix = 'wp_';
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+	define( 'ABSPATH', __DIR__ . '/' );
 }
 require_once( ABSPATH . 'wp-settings.php' );
-define('FS_METHOD', 'direct');
+?>
