@@ -1,7 +1,10 @@
-kubectl delete deploy wp-deployment 
-kubectl delete svc wp-svc
+kubectl delete deploy phpmyadmin-deployment 
+kubectl delete svc/phpmyadmin-svc
 
-docker build ./srcs/wordpress -t wp_image 
-kubectl apply -f ./srcs/wordpress/wp.yaml
+eval $(minikube docker-env)
 
+docker build ./srcs/phpmyadmin -t phpmyadmin_image 
+kubectl apply -f ./srcs/phpmyadmin/phpmyadmin.yaml
+
+#      kubectl exec -it
 
