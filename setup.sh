@@ -1,4 +1,4 @@
-#minikube start --vm-driver=virtualbox
+minikube start --vm-driver=virtualbox
 minikube addons enable metallb
 eval $(minikube docker-env)
 
@@ -14,4 +14,6 @@ docker build ./srcs/phpmyadmin -t phpmyadmin_image
 kubectl apply -f ./srcs/phpmyadmin/phpmyadmin.yaml
 docker build ./srcs/mysql -t mysql_image
 kubectl apply -f ./srcs/mysql/mysql.yaml
+docker build ./srcs/grafana -t grafana_image
+kubectl apply -f ./srcs/grafana/grafana.yaml
 #minikube dashboard

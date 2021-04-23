@@ -1,10 +1,10 @@
-kubectl delete deploy phpmyadmin-deployment 
-kubectl delete svc/phpmyadmin-svc
+kubectl delete deploy nginx-deployment 
+kubectl delete svc/nginx-svc
 
 eval $(minikube docker-env)
 
-docker build ./srcs/phpmyadmin -t phpmyadmin_image 
-kubectl apply -f ./srcs/phpmyadmin/phpmyadmin.yaml
+docker build ./srcs/nginx -t nginx_image 
+kubectl apply -f ./srcs/nginx/nginx.yaml
 
 #      kubectl exec -it
 
