@@ -12,6 +12,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 RUN mkdir /etc/nginx/ssl
 RUN openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout /etc/nginx/ssl/localhost_key.pem -out /etc/nginx/ssl/localhost.pem -days 3650 -subj "/C=RF/ST=Kazan/L=Kazan/O=21 School/OU=mspyke/CN=superproject"
 
+# Scripts
 COPY start_nginx.sh /tmp/
 RUN chmod -R 755 /tmp/start_nginx.sh
 RUN mkdir -p /run/nginx/

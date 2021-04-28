@@ -10,10 +10,14 @@ RUN mkdir /run/openrc
 RUN touch /run/openrc/softlevel
 
 # Config database
-COPY mariadb-server.cnf /etc/my.cnf.d/
+COPY my.cnf /etc/
 
+# Scripts and databases for the setting
 COPY mysql_start.sh .
+RUN chmod +x mysql_start.sh
 COPY create_db .
+COPY wordpress.sql .
 
 EXPOSE 3306
+
 CMD sh mysql_start.sh
