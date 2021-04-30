@@ -1,10 +1,10 @@
-kubectl delete deploy ftps-deployment 
-kubectl delete svc/ftps-svc
+kubectl delete deploy grafana-deployment 
+kubectl delete svc/grafana-svc
 
 eval $(minikube docker-env)
 
-docker build ./srcs/ftps -t ftps_image 
-kubectl apply -f ./srcs/ftps/ftps.yaml
+docker build ./srcs/grafana -t grafana_image 
+kubectl apply -f ./srcs/grafana/grafana.yaml
 
 #      kubectl exec -it
 
