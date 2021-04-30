@@ -6,5 +6,5 @@ eval $(minikube docker-env)
 docker build ./srcs/grafana -t grafana_image 
 kubectl apply -f ./srcs/grafana/grafana.yaml
 
-#      kubectl exec -it
+#kubectl exec -it **podname** sh
 
