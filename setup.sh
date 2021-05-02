@@ -1,5 +1,6 @@
-#minikube start --vm-driver=virtualbox
+minikube start --vm-driver=virtualbox
 minikube addons enable metallb
+
 eval $(minikube docker-env)
 
 docker pull metallb/speaker:v0.8.2
@@ -22,4 +23,5 @@ docker build ./srcs/telegraf -t telegraf_image
 kubectl apply -f ./srcs/telegraf/telegraf.yaml
 docker build ./srcs/ftps -t ftps_image
 kubectl apply -f ./srcs/ftps/ftps.yaml
-#minikube dashboard
+
+minikube dashboard

@@ -4,8 +4,8 @@ kubectl delete deploy nginx-deployment
 kubectl delete svc nginx-svc
 kubectl delete deploy mysql-deployment 
 kubectl delete svc mysql-svc
-kubectl delete deploy wordpress-deployment 
-kubectl delete svc wordpress-svc
+kubectl delete deploy wp-deployment 
+kubectl delete svc wp-svc
 kubectl delete deploy grafana-deployment 
 kubectl delete svc grafana-svc
 kubectl delete deploy influxdb-deployment 
@@ -14,6 +14,3 @@ kubectl delete deploy telegraf-deployment
 kubectl delete svc telegraf-svc
 kubectl delete deploy ftps-deployment 
 kubectl delete svc ftps-svc
-
-#      kubectl exec -it
-

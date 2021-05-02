@@ -1,10 +1,10 @@
-kubectl delete deploy grafana-deployment 
-kubectl delete svc/grafana-svc
+kubectl delete deploy influxdb-deployment 
+kubectl delete svc/influxdb-svc
 
 eval $(minikube docker-env)
 
-docker build ./srcs/grafana -t grafana_image 
-kubectl apply -f ./srcs/grafana/grafana.yaml
+docker build ./srcs/influxdb -t influxdb_image 
+kubectl apply -f ./srcs/influxdb/influxdb.yaml
 
 #kubectl exec -it **podname** sh
 
